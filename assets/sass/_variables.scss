@@ -1,0 +1,50 @@
+// Variables.
+// Misc.
+$TIMER_SHARDS: 14;
+
+// Transitions.
+$transition-fast: .2s !default;
+$transition-very-fast: .1s !default;
+
+// Compass config.
+$base-font-size: 16px;
+
+// Susy layouts.
+$break-phone: 10 480px;
+$break-tablet: 481px 10 800px;
+$break-mobile: 10 801px;
+$break-desktop: 801px 10;
+
+// Susy grid.
+$total-columns: 10;
+$column-width: 100px;
+$gutter-width: 20px;
+$grid-padding: 0px;
+
+// Susy options.
+$container-style: magic;
+$container-width: 1200px;
+$show-grid-backgrounds: false;
+
+// Type.
+$sans-stack: 'proxima-nova', sans-serif;
+$serif-stack: 'jaf-lapture', serif;
+$monospace-stack: 'inconsolata', monospace;
+$primary-stack: $sans-stack;
+$secondary-stack: $serif-stack;
+$logo-stack: $serif-stack;
+
+// Colors.
+$blue: #23232f;
+$red: #ce452e;
+$saturated-blue: #0b253e;
+$gray-blue: #595b5f;
+$light-blue: #b0b4bc;
+$midgray: #8b8b8b;
+$lightgray: #c8c5c5;
+$tan: #c2bfae;
+$green: #9da467;
+
+// Palette.
+$primary: $blue;
+$secondary: $lightgray;

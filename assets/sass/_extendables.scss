@@ -1,0 +1,26 @@
+// Extendables.
+// Display none extend.
+%display-none {
+  display: none;
+}
+
+// Hide text extend.
+%hidetext {
+  @include hide-text;
+}
+
+// Clearfix extend.
+%clearfix {
+  @include pie-clearfix;
+}
+
+// Uncollapse extend.
+%uncollapse {
+  &:before {
+    content: '\a0 ';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}

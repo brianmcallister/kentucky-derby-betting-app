@@ -6,22 +6,17 @@
 
   <title>Kentucky Derby</title>
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 
   <script type="text/javascript" src="//use.typekit.net/qyf1cot.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <script async data-main="/js/main.js" src="/js/lib/require.js"></script>
-  <script async src="/js/templates.js"></script>
+  <script async data-main="/public/js/main.js" src="/public/js/libs/require.js"></script>
+  <script async src="/public/js/templates.js"></script>
 </head>
 
 <body>
-  <input type="text" name="name" placeholder="your name">
-  <button>deal me in</button>
-
- 
- <button>+ $1</button>
- <button>- $1</button>
- 
+  <input class="bettor-name" type="text" name="name" placeholder="your name">
+  <button class="start-button">deal me in</button>
 </body>
 </html>

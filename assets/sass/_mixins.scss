@@ -1,0 +1,124 @@
+// Mixins.
+// Size mixin.
+// https://gist.github.com/brianmcallister/3659524
+// 
+// $width  - Element width, with units.
+// $height - Optional height of the element. Expects units, ex: 5px.
+//           Defaults to false.
+@mixin size($width, $height: false) {
+  width: $width;
+  
+  @if $height {
+    height: $height;
+  } @else {
+    height: $width;
+  }
+}
+
+// Print position coords only.
+// https://gist.github.com/brianmcallister/3641867
+// 
+// $values - Position values. Null values get skipped over.
+@mixin pos-coords($values: null null null null) {
+  $position-list: top right bottom left;
+  $count: 1;
+  
+  @if length($values) == 1 and $values == 'reset' {
+    $values: auto auto auto auto;
+  }
+  
+  @each $value in $values {
+    @if $value == 'auto' or $value != null {
+      $pos: nth($position-list, $count);
+      #{$pos}: $value;
+    }
+    $count: $count + 1;
+  }
+}
+
+// Reset position coords mixin.
+@mixin reset-coords() {
+  @include pos-coords('reset');
+}
+
+// Position mixin.
+// 
+// $type     - Position type.
+// $values   - List of position values. Null values get skipped over.
+// $z-index  - Optional z-index value.
+@mixin position($type: relative, $values: null null null null, $z-index: '') {
+  position: $type;
+  
+  @if $type != 'static' and $type != 'inherit' {
+    @include pos-coords($values);
+    
+    @if $z-index != '' {
+      z-index: $z-index;
+    }
+  }
+}
+
+// Maintain ratio mixin. Great for responsive grids, or videos.
+// https://gist.github.com/brianmcallister/2932463
+// 
+// $ratio - Ratio the element needs to maintain.
+// 
+// Examples
+// 
+//   // A 16:9 ratio would look like this:
+//   .element {
+//     @include maintain-ratio(16 9);
+//   }
+@mixin maintain-ratio($ratio: 1 1) {
+  @if length($ratio) < 2 or length($ratio) > 2 {
+    @warn "$ratio must be a list with two values.";
+  }
+
+  $width: 100%;
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+  
+  width: $width;
+  height: 0;
+  padding-bottom: $height;
+}
+
+// Mask image.
+@mixin mask-image($img) {
+  -webkit-mask-image: image-url($img);
+     -moz-mask-image: image-url($img);
+       -o-mask-image: image-url($img);
+  	      mask-image: image-url($img);  
+}
+
+  
+// Show the Susy grid background.
+@mixin grid-bg() {
+  @if $show-grid-backgrounds == true {
+    @include susy-grid-background;
+  }
+}
+
+// Susy helpers.
+@mixin phone() {
+  @include at-breakpoint($break-phone) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @include at-breakpoint($break-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @include at-breakpoint($break-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @include at-breakpoint($break-desktop) {
+    @content;
+  }
+}
