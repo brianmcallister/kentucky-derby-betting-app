@@ -7,6 +7,14 @@
   text-align: center;
 }
 
+.calculate-winner {
+  padding: 50px;
+  
+  .final-winners {
+    margin-top: 50px;
+  }
+}
+
 .betting {
   @include position(fixed, 0 null null 0);
   @include size(100%);

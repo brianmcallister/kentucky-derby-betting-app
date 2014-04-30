@@ -56,7 +56,15 @@ define [
         
       amountPerShare = totalPot / totalShares
       
-      for winner in winners
-        console.log "#{winner.name} gets $#{winner.shares * amountPerShare}"
+      html = ''
+      
+      if winners.length
+        for winner in winners
+          html += "<div>#{winner.name} gets $#{winner.shares * amountPerShare}</div>"
+      else
+        for key, value of bets
+          html += "<div>#{value.bettor} gets $#{value.total}</div>"
+          
+      document.querySelector('.final-winners').innerHTML = html
         
       return this

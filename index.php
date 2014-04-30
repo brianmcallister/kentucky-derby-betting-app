@@ -23,6 +23,8 @@
       <form class="winner-form">
         <select class="winner-select"></select>
       </form>
+      
+      <div class="final-winners"></div>
     </div>
   <?php else: ?>
     <div class="start-page-content">
