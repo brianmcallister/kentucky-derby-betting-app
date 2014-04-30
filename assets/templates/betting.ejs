@@ -1,21 +1,28 @@
 <form class="betting-form">
   <h1>yeah <%- data.name %>, bet those ponies</h1>
-  
-  <div class="horse" data-name="california-chrome">
-    <h2>California Chrome</h2>
-    <h4>season ranking: 1</h4>
-    <h4>season points: 150</h4>
     
-    <img src="http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/californiachrome3-8-sm_0.jpg">
+  <div class="horses">
+    <% _.each(data.horses, function (horse) { %>
+      <div class="horse" data-name="<%- horse.slug %>">
+        <h2><%- horse.name %></h2>
+      
+        <div class="horse-meta">
+          <h4 class="horse-ranking">season ranking: <%- horse.rank %></h4>
+          <h4 class="horse-points">season points: <%- horse.points %></h4>
+        </div>
     
-    <div>
-      <button class="increase">+ $1</button>
-      <button class="decrease">- $1</button>
-    </div>
+        <img src="<%- horse.img %>">
     
-    <h1>your bet: <span class="bet-amount">$0</span></h1>
+        <div>
+          <button class="bet-button increase">+ $1</button>
+          <button class="bet-button decrease">- $1</button>
+        </div>
     
-    <input type="hidden" name="california-chrome" value="0">
+        <h1 class="your-bet"><span class="bet-amount">$0</span></h1>
+    
+        <input type="hidden" name="<%- horse.slug %>" value="0">
+      </div>
+    <% }); %>
   </div>
   
   <hr>
