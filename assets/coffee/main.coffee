@@ -15,6 +15,14 @@ define [
   domReady ->
     bettingView = new BettingView el: document.body
     
+    # Set up utils.
+    window.global = {}
+    window.global.deleteUser = (user) ->
+      userObject = localStorage.getItem user
+      return unless userObject
+      console.log 'user', userObject 
+    
+    # Set up query string parser.
     query = {}
     
     window.location.search.slice(1).split('&').forEach (part) ->
