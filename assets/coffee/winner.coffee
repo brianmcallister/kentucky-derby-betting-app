@@ -62,6 +62,8 @@ define [
         for winner in winners
           html += "<div>#{winner.name} gets $#{winner.shares * amountPerShare}</div>"
       else
+        html += '<div><strong>nobody wins :( everybody gets their money back</strong></div>'
+        
         for key, value of bets
           html += "<div>#{value.bettor} gets $#{value.total}</div>"
           
