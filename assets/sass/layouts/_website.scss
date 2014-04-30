@@ -60,8 +60,13 @@
 }
 
 hr {
-  margin: 50px 0;
+  margin: 50px 0 150px 0;
   clear: both;
   width: 100%;
   display: block;
+}
+
+.finish {
+  padding: 0 0 150px 0;
+  text-align: center;
 }

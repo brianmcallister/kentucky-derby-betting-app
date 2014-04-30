@@ -95,7 +95,22 @@ define [
     finish: (event) ->
       @stopAndPrevent event
       
-      console.log 'finish'
+      data = bettor: '', total: 0, horses: []
+      
+      for field in this.el.querySelectorAll '.betting-form [name]'
+        if field.name is 'bettor-name'
+          data.bettor = field.value
+          continue
+        
+        if field.name is 'bettor-total'
+          data.total = parseInt field.value, 10
+          continue
+          
+        horse = {}
+        horse[field.name] = field.value
+        data.horses.push horse
+      
+      localStorage.setItem data.bettor, JSON.stringify data
       return this
       
       

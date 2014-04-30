@@ -16,9 +16,19 @@
 </head>
 
 <body>
-  <div class="start-page-content">
-    <input class="bettor-name" type="text" name="name" placeholder="your name">
-    <button class="start-button">deal me in</button>
-  </div>
+  <?php if ($_GET['admin'] && $_GET['admin'] === 'true'): ?>
+    <div class="calculate-winner">
+      <h2>select winner:</h2>
+      
+      <form class="winner-form">
+        <select class="winner-select"></select>
+      </form>
+    </div>
+  <?php else: ?>
+    <div class="start-page-content">
+      <input class="bettor-name" type="text" name="name" placeholder="your name">
+      <button class="start-button">deal me in</button>
+    </div>
+  <?php endif; ?>
 </body>
 </html>

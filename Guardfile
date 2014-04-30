@@ -17,5 +17,5 @@ guard 'ejs',
 # guard-livereload
 guard 'livereload' do
   watch %r{public/(?:css|js)/.+\.(?:css|js)}
-  watch %r{public/.*\.html}
+  watch %r{.*\.php}
 end
