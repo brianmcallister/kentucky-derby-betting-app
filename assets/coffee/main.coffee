@@ -22,9 +22,12 @@ define [
     # Set up utils.
     window.global = {}
     window.global.deleteUser = (user) ->
-      userObject = localStorage.getItem user
+      userObject = JSON.parse localStorage.getItem user
       return unless userObject
-      console.log 'user', userObject 
+      running = localStorage.getItem 'running-total'
+      running = running - userObject.total
+      localStorage.removeItem user
+      localStorage.setItem 'running-total', running
     
     # Set up query string parser.
     query = {}
