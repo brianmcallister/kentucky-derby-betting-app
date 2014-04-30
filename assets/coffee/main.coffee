@@ -13,6 +13,10 @@ define [
   'libs/domReady'
 ], (BettingView, WinnerView, domReady) ->
   domReady ->
+    runningTotal = localStorage.getItem 'running-total'
+    if runningTotal is null
+      localStorage.setItem 'running-total', 0
+            
     bettingView = new BettingView el: document.body
     
     # Set up utils.

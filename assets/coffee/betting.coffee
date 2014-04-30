@@ -111,8 +111,18 @@ define [
         data.horses.push horse
       
       localStorage.setItem data.bettor, JSON.stringify data
-      return this
       
+      # Update the running total.
+      running = 0
+    
+      for index, key in localStorage
+        key = localStorage.key key
+        continue if key is 'running-total'
+        item = JSON.parse localStorage.getItem key
+        running += item.total
+
+      localStorage.setItem 'running-total', running
+      return this
       
     stopAndPrevent: (event) ->
       event.preventDefault()
