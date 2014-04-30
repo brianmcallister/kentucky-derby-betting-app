@@ -31,6 +31,7 @@ define [
       'submit .betting-form': 'finish'
       'click .increase': 'increase'
       'click .decrease': 'decrease'
+      'click .checkout-button': -> window.location.reload()
       
     initialize: ->
       @on 'increase', @increaseTotal
@@ -122,6 +123,13 @@ define [
         running += item.total
 
       localStorage.setItem 'running-total', running
+      
+      # Show the final screen.
+      data = total: data.total
+      checkout = document.createElement 'div'
+      checkout.classList.add 'checkout'
+      checkout.innerHTML = window.app.templates['assets/templates/checkout.ejs'] data: data
+      document.body.appendChild checkout
       return this
       
     stopAndPrevent: (event) ->

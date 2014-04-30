@@ -44,6 +44,8 @@ define [
         return -1 if a.shares < b.shares
         return 1 if a.shares > b.shares
         return 0
+        
+      winners.reverse()
       
       # Calculate the winnings.
       totalShares = 0

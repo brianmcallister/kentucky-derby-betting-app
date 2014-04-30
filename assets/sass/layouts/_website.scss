@@ -70,3 +70,21 @@ hr {
   padding: 0 0 150px 0;
   text-align: center;
 }
+
+.checkout {
+  @include position(fixed, 0 null null 0);
+  @include size(100%);
+  
+  color: white;
+  padding: 50px;
+  text-align: center;
+  background: darken(red, 5%);
+  
+  .message {
+    font-size: 80px;
+  }
+  
+  .amount {
+    font-size: 400px;
+  }
+}
