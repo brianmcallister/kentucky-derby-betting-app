@@ -16,7 +16,9 @@
 </head>
 
 <body>
-  <input class="bettor-name" type="text" name="name" placeholder="your name">
-  <button class="start-button">deal me in</button>
+  <div class="start-page-content">
+    <input class="bettor-name" type="text" name="name" placeholder="your name">
+    <button class="start-button">deal me in</button>
+  </div>
 </body>
 </html>
