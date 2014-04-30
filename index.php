@@ -16,6 +16,8 @@
 </head>
 
 <body>
+  <marquee scrollspeed="10"><img src="/public/img/laurel.jpg"></marquee>
+  
   <?php if ($_GET['admin'] && $_GET['admin'] === 'true'): ?>
     <div class="calculate-winner">
       <h2>select winner:</h2>
@@ -28,9 +30,11 @@
     </div>
   <?php else: ?>
     <div class="start-page-content">
-      <input class="bettor-name" type="text" name="name" placeholder="your name">
+      <input class="bettor-name" type="text" name="name" placeholder="yes i definitely want to lose all my money">
       <button class="start-button">deal me in</button>
     </div>
   <?php endif; ?>
+  
+  <marquee direction="right"><img src="/public/img/horse-mask.jpg"></marquee>
 </body>
 </html>
