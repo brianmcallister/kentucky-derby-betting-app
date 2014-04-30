@@ -9,8 +9,8 @@ define [
       'click .decrease': 'decrease'
       
     initialize: ->
-      @on 'increase', -> console.log 'increase total'
-      @on 'decrease', -> console.log 'decrease total'
+      @on 'increase', @increaseTotal
+      @on 'decrease', @decreaseTotal
       return this
       
     start: ->
@@ -29,33 +29,43 @@ define [
       @stopAndPrevent event
       horse = event.currentTarget.parentElement.parentElement
       name = horse.getAttribute 'data-name'
-      
       amount = horse.querySelector "[name=#{name}]"
-      
       bet = amount.value
       bet = parseInt(bet, 10) + 1
-      
       amount.value = bet
-      
       horse.querySelector('.bet-amount').textContent = "$#{bet}"
       @trigger 'increase'
+      return this
       
     decrease: (event) ->
       @stopAndPrevent event
-      
       horse = event.currentTarget.parentElement.parentElement
       name = horse.getAttribute 'data-name'
-      
       amount = horse.querySelector "[name=#{name}]"
-      
       bet = amount.value
       bet = parseInt(bet, 10) - 1
       if bet < 0 then bet = 0
-      
       amount.value = bet
-      
       horse.querySelector('.bet-amount').textContent = "$#{bet}"
       @trigger 'decrease'
+      return this
+      
+    increaseTotal: ->
+      total = @el.querySelector '[name="bettor-total"]'
+      amount = total.value
+      amount = parseInt(amount, 10) + 1
+      total.value = amount
+      @el.querySelector('.total-bet').textContent = "$#{amount}"
+      return this
+      
+    decreaseTotal: ->
+      total = @el.querySelector '[name="bettor-total"]'
+      amount = total.value
+      amount = parseInt(amount, 10) - 1
+      if amount < 0 then amount = 0
+      total.value = amount
+      @el.querySelector('.total-bet').textContent = "$#{amount}"
+      return this
       
     finish: (event) ->
       @stopAndPrevent event
