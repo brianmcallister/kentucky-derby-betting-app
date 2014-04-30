@@ -13,6 +13,7 @@ define [
       {name: 'Intense Holiday', slug: 'intense-holiday', rank: '8', points: '93', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/intense-holiday_0.jpg'}
       {name: 'Wildcat Red', slug: 'wildcat-red', rank: '9', points: '90', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/wild-cat-red_0.jpg'}
       {name: 'We Miss Artie', slug: 'we-miss-artie', rank: '10', points: '60', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/we-miss-artie.jpg'}
+      {name: 'Jason Hawkins', slug: 'jason-hawkins', rank: 'undefined', points: 'NaN', img: '/public/img/jason.jpg'}
       {name: 'Ride On Curlin', slug: 'ride-on-curlin', rank: '11', points: '55', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/ride-on-curlin.jpg'}
       {name: 'Chitu', slug: 'chitu', rank: '12', points: '54', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/chitu.jpg'}
       {name: 'Tapiture', slug: 'tapiture', rank: '13', points: '52', img: 'http://static.kentuckyderby.com/sites/kentuckyderby.com/files/imagecache/content_full/images/primary/tapiture.jpg'}
